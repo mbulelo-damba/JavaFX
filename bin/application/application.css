@@ -1,0 +1,121 @@
+.button {
+	-fx-font-size: 14px;
+//	-fx-background-color: blue;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-background-color: linear-gradient(#2A5058, #61a2b1);
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover {
+	-fx-background-color: linear-gradient(#61a2b1, #2A5058);
+}
+
+.label {
+
+	-fx-text-fill: #61a2b1;
+//	-fx-text-fill: #7e2fcc;
+	-fx-font-size: 13px;
+	-fx-font-weight: bold;
+	
+}
+
+.chart-title {
+
+	-fx-font-weight: bold;
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 1.1em;
+}
+/*
+.default-color0.chart-pie { -fx-pie-color: #ffd700; }
+.default-color1.chart-pie { -fx-pie-color: #ffa500; }
+.default-color2.chart-pie { -fx-pie-color: #ffffff; }
+.default-color3.chart-pie { -fx-pie-color: #adff2f; }
+.default-color4.chart-pie { -fx-pie-color: #ff5700; }
+*/
+
+.chart-pie-label-line {
+
+	-fx-stroke: #ffffff;
+	-fx-fill: #ffffff;
+
+}
+
+.chart-pie-label {
+
+	-fx-font-weight: bold;
+	-fx-fill: #ffffff;
+
+}
+
+#piechart {
+	-fx-font-size: 13px;
+	-fx-font-weight: bold;
+}
+
+#isConnected {
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 13px;
+	-fx-font-weight: bold;
+}
+
+#userLbl {
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 13px;
+	-fx-font-weight: bold;
+}
+
+#wantToRegister {
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 13px;
+	-fx-font-weight: bold;
+}
+
+#lblwebviewStatus{
+	-fx-text-fill: #ffffff;
+	-fx-font-size: 18px;
+	-fx-font-weight: bold;
+}
+
+#btnLogout:hover{
+	-fx-background-color: linear-gradient(pink, red);
+	
+}
+
+
+
+#btnDelete:hover{
+	-fx-background-color: linear-gradient(#61a2b1, #2A5058);
+	
+}
+
+
+
+#lblCompulsoryFields{
+	-fx-text-fill: lightblue;
+	-fx-font-size: 13px;
+//	-fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+//	-fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+	-fx-font-weight: bold;
+}
+
+
+#combobox {
+	-fx-text-fill: #7e2fcc;
+	-fx-font-size: 12px;
+	-fx-background-color: white;
+		
+}
+
+
+#tableview{
+	-fx-font-size: 13px;
+	-fx-background-color: white;
+	
+}
+
+.root {
+//	-fx-background-color: lightblue;
+//	-fx-background-image: url("/images/blue_linen.png");
+	-fx-background-image: url("/images/back2.png");
+}

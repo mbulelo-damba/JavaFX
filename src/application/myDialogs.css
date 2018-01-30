@@ -1,0 +1,30 @@
+.dialog-pane{
+//		-fx-background-image: url("/images/blue_linen.png");
+		-fx-background-image: url("/images/back2.png");
+}
+
+
+.dialog-pane > *.label.content{
+  
+	-fx-text-fill: #ffffff;
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.33) , 1.0, 1.0 , 1.0 , 1.0 );
+	-fx-font-weight: bold;
+}
+.dialog-pane:header *.header-panel{
+    -fx-background-color: #a59c31;
+	-fx-font-weight: bold;
+}
+
+
+.button {
+	-fx-font-size: 14px;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+	-fx-background-color: linear-gradient(#61a2b1, #2A5058);
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover {
+	-fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+

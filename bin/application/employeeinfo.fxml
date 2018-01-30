@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.PointLight?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.shape.Sphere?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EmployeeInfoController">
+   <children>
+      <TabPane fx:id="tabPane" layoutX="14.0" layoutY="30.0" prefHeight="421.0" prefWidth="596.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+            <Tab text="Employee Information">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                       
+                       <Button fx:id="btnLogout" layoutX="457.0" layoutY="25.0" mnemonicParsing="false" onAction="#Logout" prefHeight="25.0" prefWidth="120.0" text="Logout" AnchorPane.rightAnchor="18.0" />
+      <Label fx:id="userLbl" layoutX="19.0" layoutY="22.0" prefHeight="53.0" prefWidth="194.0" text="user welcomes" textFill="WHITE" AnchorPane.leftAnchor="19.0">
+                           <effect>
+                              <DropShadow spread="0.33" />
+                           </effect></Label>
+      <TextField fx:id="txtEID" layoutX="19.0" layoutY="102.0" promptText="ID" AnchorPane.leftAnchor="19.0" />
+      <TextField fx:id="txtName" layoutX="19.0" layoutY="140.0" promptText="Name" AnchorPane.leftAnchor="19.0" />
+      <TextField fx:id="txtSurname" layoutX="19.0" layoutY="184.0" promptText="Surname" AnchorPane.leftAnchor="19.0" />
+      <TextField fx:id="txtAge" layoutX="19.0" layoutY="224.0" promptText="Age" AnchorPane.leftAnchor="19.0" />
+      <Button fx:id="btnSave" layoutX="19.0" layoutY="265.0" mnemonicParsing="false" onAction="#saveData" prefHeight="25.0" prefWidth="69.0" text="Save" AnchorPane.leftAnchor="19.0" />
+      <Button fx:id="btnUpdate" layoutX="99.0" layoutY="267.0" mnemonicParsing="false" onAction="#updateData" prefHeight="25.0" prefWidth="69.0" text="Update" />
+      <Button fx:id="btnDelete" layoutX="19.0" layoutY="287.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="25.0" prefWidth="149.0" text="Delete" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="19.0" />
+      <Button fx:id="btnClear" layoutX="18.0" layoutY="324.0" mnemonicParsing="false" onAction="#clearData" prefHeight="25.0" prefWidth="149.0" text="Clear" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="19.0" />
+      <ComboBox fx:id="combobox" layoutX="230.0" layoutY="71.0" prefHeight="25.0" prefWidth="174.0" promptText="Search by filtering" />
+      <TextField fx:id="txtSearch" layoutX="428.0" layoutY="72.0" onKeyReleased="#searchByFiltering" promptText="Search" AnchorPane.rightAnchor="18.0" />
+      <Button fx:id="btnLoadData" layoutX="230.0" layoutY="324.0" mnemonicParsing="false" onAction="#LoadData" prefHeight="25.0" prefWidth="348.0" text="Load Employee Data" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="18.0" />
+      
+      
+      <TableView fx:id="tableview" layoutX="230.0" layoutY="106.0" prefHeight="237.0" prefWidth="348.0" AnchorPane.rightAnchor="18.0">
+         <columns>
+            <TableColumn fx:id="columnEID" minWidth="50.0" prefWidth="63.0" text="EID" />
+            <TableColumn fx:id="columnName" minWidth="100.0" prefWidth="103.0" text="Name" />
+            <TableColumn fx:id="columnSurname" minWidth="100.0" prefWidth="104.0" text="Surname" />
+            <TableColumn fx:id="columnAge" minWidth="50.0" prefWidth="77.0" text="Age" />
+         </columns></TableView>
+      <Button fx:id="btnTableRowNumber" layoutX="231.0" layoutY="27.0" mnemonicParsing="false" onAction="#displayTotalNumberOfRows" prefHeight="25.0" prefWidth="149.0" text="Number of Records" />
+      <Separator layoutX="196.0" layoutY="41.0" orientation="VERTICAL" prefHeight="386.0" prefWidth="1.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="196.0" AnchorPane.rightAnchor="398.0" AnchorPane.topAnchor="41.0">
+         <effect>
+                              <DropShadow />
+         </effect>
+      </Separator>
+                       
+                       
+                     </children>
+                     </AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="Web View">
+          <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                      
+                        <Button layoutX="272.0" layoutY="379.0" mnemonicParsing="false" onAction="#loadWebsites" text="Load" AnchorPane.leftAnchor="237.0" AnchorPane.rightAnchor="237.0" />
+                        <WebView fx:id="webview" layoutX="-11.0" layoutY="-23.0" prefHeight="352.0" prefWidth="600.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0" />
+                     </children>
+                     </AnchorPane>
+              </content>
+          </Tab>
+            <Tab text="Pie Charts">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <PieChart fx:id="piechart" layoutX="135.0" layoutY="237.0" legendSide="LEFT" prefHeight="337.0" prefWidth="586.0" title="AGE STATISTICS" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0">
+                           <effect>
+                              <DropShadow spread="0.33" />
+                           </effect></PieChart>
+                        <Button layoutX="237.0" layoutY="355.0" mnemonicParsing="false" onAction="#populatePieChart" prefHeight="30.0" prefWidth="122.0" text="Load" AnchorPane.leftAnchor="237.0" AnchorPane.rightAnchor="237.0" />
+                        <Label fx:id="lblwebviewStatus" layoutX="68.0" layoutY="350.0" prefHeight="40.0" prefWidth="122.0" textFill="WHITE">
+                           <effect>
+                              <DropShadow spread="0.33" />
+                           </effect></Label>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Media Player">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <MediaView fx:id="mv" fitHeight="350.0" fitWidth="580.0" layoutX="14.0" layoutY="14.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="5.0" />
+                        <HBox layoutX="12.0" layoutY="367.0" prefHeight="51.0" prefWidth="600.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#play" text="Play" />
+                              <Button mnemonicParsing="false" onAction="#pause" text="Pause" />
+                              <Button mnemonicParsing="false" onAction="#fast" text="Fast-Forward" />
+                              <Button mnemonicParsing="false" onAction="#slow" text="Slow" />
+                              <Button mnemonicParsing="false" onAction="#reload" text="Reload" />
+                              <Button mnemonicParsing="false" onAction="#start" text="Start" />
+                              <Button mnemonicParsing="false" onAction="#last" text="Last" />
+                           </children>
+                        </HBox>
+                        <Slider fx:id="volumeSlider" layoutX="450.0" layoutY="376.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="World Map">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Sphere fx:id="earth" layoutX="273.0" layoutY="197.0" radius="100.0" AnchorPane.bottomAnchor="99.0" AnchorPane.leftAnchor="188.0" AnchorPane.rightAnchor="188.0" AnchorPane.topAnchor="99.0" />
+                        <PointLight fx:id="light" color="WHITE" layoutX="319.0" layoutY="187.0" translateX="1000.0" translateY="100.0" translateZ="-900.0" AnchorPane.bottomAnchor="232.0" AnchorPane.leftAnchor="319.0" AnchorPane.rightAnchor="278.0" AnchorPane.topAnchor="186.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+          
+   </children>
+</AnchorPane>
